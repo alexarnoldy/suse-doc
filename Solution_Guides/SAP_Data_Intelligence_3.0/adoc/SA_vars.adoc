@@ -1,0 +1,16 @@
+:useCase: Data Management and Machine Learning
+
+:title: Digital Transformation - SAP Data Intelligence 3.0
+
+:author: Alex Arnoldy
+:authorEmail: alex.arnoldy@suse.com
+:companyName: SUSE
+
+# :authorGHURL: https://github.com/alexarnoldy/suse-doc/Solution_Guides
+
+:imagesdir: ../media/
+
+ifdef::env-github[]
+:imagesdir: {authorGHURL}/blob/master/SA-{useCase}/media/
+endif::[]
+

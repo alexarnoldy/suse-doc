@@ -1,0 +1,3 @@
+:ISVPartner: SAP
+:ISVProductName: Data Intelligence
+:ISVProductNameNoSpaces: Data-Intelligence

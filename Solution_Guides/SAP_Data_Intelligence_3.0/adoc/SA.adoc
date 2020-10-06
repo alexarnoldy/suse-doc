@@ -1,0 +1,137 @@
+
+include::./SA_vars.adoc[]
+
+= {title}
+{author}, {companyName} < {authorEMail} >
+
+:favicon:
+:doctype: book
+
+[preface]
+= Preface
+
+
+
+The following, layered footnote:Archimate[link: https://pubs.opengroup.org/architecture/archimate3-doc[Archimate Enterprise Architecture]] aspects will be covered:
+
+ifdef::Strategy[]
+* *_Why_* one should consider this strategy
+endif::Strategy[]
+ifdef::Business[]
+* *_Who_* to engage with, inform and collaborate with
+* *_What_* key factors are important and *_When_* to consider them
+endif::Business[]
+ifdef::Application[]
+* *_What_* software and applications this is relevant to accomplish
+endif::Application[]
+ifdef::Technology[]
+* *_How_* various technology components can facilitate this
+endif::Technology[]
+ifdef::Physical[]
+* *_Where_* the resulting solution may physically or virtually reside
+endif::Physical[]
+
+Additional characteristics, like decision factors such as:
+
+ifdef::Availability[]
+* availability
+endif::Availability[]
+ifdef::Performance[]
+* performance
+endif::Performance[]
+ifdef::Security[]
+* security
+endif::Security[]
+ifdef::Integrity[]
+* integrity
+endif::Integrity[]
+
+are also described and incorporated in the respective layers.  Deployment aspect flavors along the lines of
+
+ifdef::PoC[]
+* proof-of-concept
+endif::PoC[]
+ifdef::Production[]
+* production
+endif::Production[]
+ifdef::Scaling[]
+* scaling
+endif::Scaling[]
+ifdef::Migration[]
+* migration
+endif::Migration[]
+
+implementations and considerations may also be covered.
+
+// Introduction
+include::./i-Introduction/SA.adoc[]
+
+// Strategy
+ifdef::Strategy[]
+include::./ii-Strategy/SA.adoc[]
+endif::Strategy[]
+
+// Business
+ifdef::Business[]
+include::./iii-Business/SA.adoc[]
+endif::Business[]
+
+// Application
+ifdef::Application[]
+include::./iv-Application/SA.adoc[]
+endif::Application[]
+
+// Technology
+ifdef::Technology[]
+include::./v-Technology/SA.adoc[]
+endif::Technology[]
+
+// Physical
+ifdef::Physical[]
+include::./vi-Physical/SA.adoc[]
+endif::Physical[]
+
+// Migration
+ifdef::Migration[]
+include::./vii-Migration/SA.adoc[]
+endif::Migration[]
+
+== Summary
+
+The era of enterprises deciding whether they should invest in tools to manage their data has long since passed. These days all enterprises, large and small, must invest in securing, managing, and fully leveraging the business data they have available to them. Anything less will leave the business at a perpetual competitive disadvanage. 
+
+Simplify::
+{CompanyName} {ProductNameCaaSP} and SAP Data Intelligence are a perfect fit for centrally managing and fully utilizing any amount of business data, stored in any locaiton, and within any number of data silos. Altertnative offerings in this field create a complex, unreliable, piecemeal approach to data management. 
+
+Modernize::
+All cloud and on-premise storage vendors provide a interface to manage their platform. Unfortunately, these interfaces focus nearly exclusively on the infrastructure of the storage, failing to answer the most critical question executives ask: "Do we have the data we need to accelerate our business?"
+
+What is needed is a central platform that can access and maintain a catalog an enterprise's data assets. To fully maintain data assets, data custodians need to be able to control access to sensitive assets as well as find and remove stale data sets as well as duplicates. 
+
+
+Accelerate::
+A feature-rich data management platform must also have the capability to
+
+In addition, overall storage needs are changing quickly. Many enterprises are moving from terabyte to petabyte levels of data. In addition, the applications that need to access this information are running in a diverse and rapidly evolving IT environment. Leveraging this layered solution architecture helps you innovate with higher speed and simplicity by delivering access to the latest technology. A software-defined open source storage management solution, is cost-efficient and able to adapt to changing business and data demands seamlessly. As a result, you can be confident your data will be available for any current and future workloads throughout your digital transition.
+
+
+ifdef::Glossary[]
+include::./SA-Glossary.adoc[]
+endif::Glossary[]
+
+ifdef::Appendix[]
+include::./SA-Appendix.adoc[]
+endif::Appendix[]
+
+// Standard {CompanyName} includes
+== Legal Notice
+include::./{CompanyName}/common_sbp_legal_notice.adoc[]
+
+++++
+<?pdfpagebreak?>
+++++
+
+// Standard {CompanyName} Best Practices includes
+// :leveloffset: 1
+include::./{CompanyName}/common_gfdl1.2_i.adoc[]
+

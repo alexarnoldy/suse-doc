@@ -1,0 +1,13 @@
+:CompanyName: SUSE
+:ProductName: NA
+:ProductNameNoSpaces: NA
+:ProductNameCaaSP: CaaS Platform
+:ProductNameSES: Enterprise Storage
+
+:SUSEDocType: Solution Guide
+:SUSEDocTypeNoSpaces: Solution-Guide
+
+:MarketCategory: Data Management
+:MarketCategoryAbbreviation: Data-Management
+:SecondaryMarketCategory: Artifical Intelligence / Machine Learning
+:SecondaryMarketCategoryAbbreviation: AI/ML
