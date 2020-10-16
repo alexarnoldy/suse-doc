@@ -1,0 +1,67 @@
+:useCase: Data Management and Machine Learning
+
+:title: Digital Transformation - SAP Data Intelligence 3.0
+
+:author: Alex Arnoldy
+:authorEmail: alex.arnoldy@suse.com
+:companyName: SUSE
+
+# :authorGHURL: https://github.com/alexarnoldy/suse-doc/Solution_Guides
+
+:imagesdir: ../media/
+
+ifdef::env-github[]
+:imagesdir: {authorGHURL}/blob/master/SA-{useCase}/media/
+endif::[]
+
+:CompanyName: SUSE
+:ProductName: NA
+:ProductNameNoSpaces: NA
+:ProductNameCaaSP: CaaS Platform
+:ProductNameSES: Enterprise Storage
+
+:SUSEDocType: Solution Guide
+:SUSEDocTypeNoSpaces: Solution-Guide
+
+:MarketCategory: Data Management
+:MarketCategoryAbbreviation: Data-Management
+:SecondaryMarketCategory: Artifical Intelligence / Machine Learning
+:SecondaryMarketCategoryAbbreviation: AI/ML
+
+:ISVPartner: SAP
+:ISVProductName: Data Intelligence
+:ISVProductNameNoSpaces: Data-Intelligence
+
+= {title}
+{author}, {companyName} < {authorEMail} >
+
+:favicon:
+:doctype: book
+
+[preface]
+== Preface
+
+SAP Data Intelligence provides an intuitive, single-pane-of-glass, business-wide view of a broad array of data systems, databases and assets, enabling machine learning, analytics and business intelligence teams to manage an enterprise's entire data landscape through standardized policies and interfaces.
+
+== Introduction
+
+The growth in the amount of business data being collectected continues to accelerate, making utilizing it as much of a challenge as it is an opportunity. While companies are discovering ways to transform their data into products and services that differentiate their business and create new lines of revenue,increasingly they are finding it difficult to fully capitalize on the many datasets they have available to them. At the same time they are coping with the increased cost of managing information that are stored in many, disparate data silos (e.g., cloud object store, on-premise and cloud databases, Hadoop clusters, click-stream and social media feeds). Moreover, maintaining large collections of data adds complexity to their business due to requirements for security, governance, and specialized training. In this light it is not difficult to understand a recent estimation that ~70% of data businesses collected is never utilized. 
+
+
+== Target Audience 
+
+This paper is directed at professionals involved in both IT Operations and Analytics/Business Intelligence. The recommended framework supplies the requirements to implement SAP’s Data Hub, which is certified on SUSE CaaS Platform.
+
+== Strategy
+
+SAP has long maintained its position as the market leader in mission critical enterprise applications. Supporting SAP with innovation, SUSE has been the market leader for SAP applications for over 20 years. SUSE is the trusted and preferred open source platform for SAP customers who want to unlock data intelligence, drive innovation and run with the best. As an example of this open source mandate, SAP Data Hub is deployed on a Kubernetes-compatible container platform. SUSE CaaS Platform enables you to extend your SUSE Enterprise Linux for SAP environment to container-based application delivery.
+
+== Business Problem
+
+Today’s business leaders are under increasing pressure to manage their business with data-driven decisions. This presents a particular challenge for those executives who strive to bring together the right combination of disparate data sources to unlock new value for their business. This difficulty is compounded by the very nature of how data is collected and stored, which results in independent data silos with clear way for mission critical associations to access them.
+
+Compounding on this challenge is the rapidly expanding ecosphere of data analytics and artificial intelligence applications that consume business data, but often in very specific formats. Gone are the days where company datasets were curated based on a common schema with a small number of dataset views to accomodate a handful of enterprise applications. 
+
+In selecting a data management and analytics platform, businesses need to ensure that their software investment can meet the scale of their current and future application/data landscape, as well as meet current and future data governance needs. 
+
+Equally important in this design is the resiliency and scalability of the underlying infrastructure. Experienced leaders know that enterprise-grade software isn't a solid  investment unless it is built on enterprise-grade infrastructure.
