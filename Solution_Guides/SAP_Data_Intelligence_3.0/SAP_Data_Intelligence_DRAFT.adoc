@@ -65,3 +65,15 @@ Compounding on this challenge is the rapidly expanding ecosphere of data analyti
 In selecting a data management and analytics platform, businesses need to ensure that their software investment can meet the scale of their current and future application/data landscape, as well as meet current and future data governance needs. 
 
 Equally important in this design is the resiliency and scalability of the underlying infrastructure. Experienced leaders know that enterprise-grade software isn't a solid  investment unless it is built on enterprise-grade infrastructure.
+
+== Business Value
+
+SAP Data Intelligence is a modern, fully containerized solution designed to be deployed on enterprise-grade Kubernetes clusters such as SUSE CaaS Platform. For more than 19 years, SAP has developed its software on SUSE Linux Enterprise Server (SLES) and SUSE solutions such as our CaaS Platform.
+
+SAP Data Intelligence is built on a next-generation data-aggregation model that significantly reduces the need for static data lakes. Instead, SAP Data Intelligence allows for programmatic data extraction and formatting that is executed on the platform where the live data resides. This stands in contrast to the cumbersome practice of running single-use Extract, Load, Transform (ELT) operations. SAP Data Intelligence brings together formatted, refined and cleansed data from multiple sources. The newly integrated dataset can be consumed with Data Intelligence applications such as Leonardo Machine Learning, or by any other enterprise application.
+
+SAP Data Intelligence leverages data processing pipelines, which are built from reusable application components. Data pipelines are computational models that are created on the Data Intelligence platform, but then executed on the data source through the its own, native APIs. Data Pipelines define what data is to be gathered, from which data sources, and how the resultant output should be formatted at the source. Pipelines also specify refinements and cleansing that each stream of data must go through to make it compatible with the other data streams that are being processed by the pipeline. Finally, data pipelines identify which consumer(s) will receive the newly collated data stream. SAP Data Intelligence can persist critical datasets on platform, or simply execute pipelines when required to process and provide the pipeline defined output dataset to the appropriate consumers. This provides advanatages in performance and flexibility, as well as eliminating the need for expensive, scale-limiting data warehouses.
+
+Data pipelines can be created through a graphical user interface to leverage existing data sources such as SAP HANA, SAP Vora, Apache Spark and Apache Hadoop, as well as all major open and closed source OLTP, OLAP and NoSQL databases.
+
+Before implementing a data-analytics solution, consider the specific problem you are working to solve. Below are some use cases for SAP Data Intelligence that can help you zero in on the type of solution you are pursuing.
