@@ -77,3 +77,21 @@ SAP Data Intelligence leverages data processing pipelines, which are built from 
 Data pipelines can be created through a graphical user interface to leverage existing data sources such as SAP HANA, SAP Vora, Apache Spark and Apache Hadoop, as well as all major open and closed source OLTP, OLAP and NoSQL databases.
 
 Before implementing a data-analytics solution, consider the specific problem you are working to solve. Below are some use cases for SAP Data Intelligence that can help you zero in on the type of solution you are pursuing.
+
+== Example Use Cases
+
+This section outlines potential use cases for SAP Data Intelligence built on SUSE Containers as a Service Platform. In general, SAP Data Intelligence excels in pulling data from desparate internal and external data resources to enable insight into very complex analytical problems. The use of machine learning and Big Data analytics platforms (SAP, Hadoop, MapR, Cloudera, etc.) require access to large pools of structured and unstructured data in a highly automated, systematic and secure way.
+
+.Fraud Detection
+Credit card fraud has become an epidemic, with losses in the billions of dollars. Financial institutions need the ability to create profiles that alert them to probable fraud on massive volumes of transactions. The more information they can cross-reference, the more accurate their models will become. SAP Data Intelligence can pull in transactional data from ERP systems, credit reporting bureaus, email from a Hadoop cluster, social media data and “Dark Web” databases, enabling data scientists to build very precise detection models.
+
+.Manufacturing Equipment Maintenance
+Global manufacturers rely on the uptime of their equipment to meet product delivery targets. Unscheduled maintenance or equipment failure can result in lost profits, unacceptable production quality and unmet commitments. Conversely, over-scheduling maintenance activities also impacts cost and output. Manufacturers were early adopters of Internet of Things (IoT) technology for the real-time monitoring of equipment sensors (temperature, vibration, humidity, motor loading, etc.) to gain a better understanding of the state of their environment. What if predictive models and machine learning (ML) could be used to optimize maintenance scheduling? SAP Data Intelligence can be used to orchestrate the continuous, end-to-end data flow needed to feed its integrated ML platform to predict impending outages; allowing corrective maintenance to be scheduled before any disruptions occur.
+
+== Requirements
+
+== Software Architecture
+
+SAP Data Intelligence combines data governance and lienage; data preprocessing, integration and cleansing, using a single visual interface and without the need for moving datasets from their native platforms into costly data lakes.
+
+Figure XYZ shows a high-level view of the architectural components designed to handle the data needs of a wide range of enterprise applications. The optional Hadoop cluster can be used as the main software platform for handling the composition of application data.
