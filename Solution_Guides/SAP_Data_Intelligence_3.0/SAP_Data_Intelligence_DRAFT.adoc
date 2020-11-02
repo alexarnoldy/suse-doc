@@ -88,10 +88,58 @@ Credit card fraud has become an epidemic, with losses in the billions of dollars
 .Manufacturing Equipment Maintenance
 Global manufacturers rely on the uptime of their equipment to meet product delivery targets. Unscheduled maintenance or equipment failure can result in lost profits, unacceptable production quality and unmet commitments. Conversely, over-scheduling maintenance activities also impacts cost and output. Manufacturers were early adopters of Internet of Things (IoT) technology for the real-time monitoring of equipment sensors (temperature, vibration, humidity, motor loading, etc.) to gain a better understanding of the state of their environment. What if predictive models and machine learning (ML) could be used to optimize maintenance scheduling? SAP Data Intelligence can be used to orchestrate the continuous, end-to-end data flow needed to feed its integrated ML platform to predict impending outages; allowing corrective maintenance to be scheduled before any disruptions occur.
 
+.Customer Affinity Recommendations
+E-Commerce sites routinely use various data sources to recommend additional purchases or fine-tune searches to more relevant items. Early attempts were based solely on purchasing behavior at an individual retailer. However, state-of-the-art e-commerce now requires data input from email, social media, browser search data, clickstream data, and credit card reporting sites. SAP Data Intelligence enables you to easily build data pipelines to feed machine learning recommendation models that pass real-time data into an active session on a purchasing website. This information can greatly increase the revenue per transaction metric that is critical to success. 
+
 == Requirements
 
 == Software Architecture
 
-SAP Data Intelligence combines data governance and lienage; data preprocessing, integration and cleansing, using a single visual interface and without the need for moving datasets from their native platforms into costly data lakes.
+SAP Data Intelligence combines the capabilities of SAP Data Hub: data governance and lienage; data preprocessing, integration and cleansing, with the SAP Leonardo Machine Learning Foundation. The Data Intelligence user interface SAP Data Intelligence, provides the well known SAP Data Hub Launch pad with the Machine Learning application, “ML Scenario Manager”.  
 
-Figure XYZ shows a high-level view of the architectural components designed to handle the data needs of a wide range of enterprise applications. The optional Hadoop cluster can be used as the main software platform for handling the composition of application data.
+Figure XYZ shows a high-level view of the architectural components designed to handle the data needs of a wide range of enterprise and Machine Learning applications. The optional Hadoop cluster can be used as a low latency, high capacity storage and analytics platform for localizing the most critical datasets.
+
+Tenant Applications and Services are the core of SAP Data Intelligence. SAP Data Intelligence provides various tools for the development and administration of custom applications, as well as applications that are accessible through the SAP Data Intelligence application launchpad.
+
+* SAP Data Intelligence Pipelines provide connectors between various SAP and external data sources and applications to process them. They are reusable, configurable tool chains to process data from various sources and formats (including CSV files, web services APIs, and SAP’s data stores) and can be flexibly designed.
+
+* The SAP Data Intelligence Modeler allows for the creation and configuration of such pipelines through an intuitive graphical user interface.
+
+* The Metadata Explorer provides information about the location, attributes, quality, schema, lineage, and sensitivity of datasets. With this information, you can make informed decisions about which datasets to publish and determine who has access to use or view information about the datasets.
+
+* The Connection Management block enables connections to managed systems or external storage. Services such as Amazon S3, Google Cloud Services, Microsoft Azure (ADL, WASB), data services or Hadoop HDFS can be connected, as well as many different types of databases (Oracle, SAP HANA, SAP VORA, NoSQL) or business warehouses (SAP BW).
+
+== SAP Vora Distributed Database
+SAP Vora is a horizontally scalable, distributed database that can store and process structured data, time-series data (i.e., IoT streams), graph data and semi-structured documents in-memory and/or on disk. SAP Vora is only available with SAP Data Intelligence, running in Kubernetes as a fully containerized application.
+
+It can store analytics data in Kubernetes pods, as well as provide a bi-directional Spark2 interface between SAP Data Intelligence and an optionally co-located Hadoop cluster. Like SAP Data Intelligence, SAP Vora requires a Kubernetes cluster of at least three Worker Nodes, and runs alongside Data Intelligence on the same Kubernetes cluster.
+
+== Persistent Database
+This database holds all of the required persistent data required by SAP Data Hub (e.g., metadata). This instance is automatically installed, sized, and maintained as part of the overall Data Hub installation process. No special consideration is required.
+
+== Private Container Registry
+SAP Data Intelligence utilizes a private container image registry for system, application, and pipeline container images. This can be an enterprise wide registry or one dedicated to the Data Intelligence cluster. While there are a number of container image registries available, The SUSE Private Registry powered by Harbor is often the best choice for customers who want the best security and management features available combined with the agile development environment that only open source software can provide. {isvpartner} {isvproductname} uses the private registry to store all of the {isvproductname} application components to be deployed in a dev/ops fashion on the Kubernetes cluster as well as data pipeline container images and custom pipeline application artifacts.
+
+== Optional Hadoop Cluster
+Optionally, a Hadoop cluster can be built on dedicated nodes and co-located with SAP Data Intelligence. This Hadoop cluster can be used as a local high powered computational/storage medium for SAP Data Intelligence original and uploaded content. The SAP Data Intelligence Spark Extensions are used to interface with the Spark2 environment on the Hadoop cluster for processing and storing data. When utilizing this cluster, Data Hub users can leverage the analytical strengths of SAP Vora to analyze and store data in HDFS through the SAP Data Intelligence Vora Spark Extension. SUSE has extensive experience deploying bare-metal and virtualized Hadoop clusters on SUSE Linux Enterprise Server. While this Hadoop cluster uses dedicated nodes, its HDFS storage is built on block storage from the SUSE Enterprise Storage cluster that also serves SAP Data Intelligence. 
+
+== SUSE CaaS Platform
+SUSE CaaS Platform is an integrated software platform that automates the tasks of building, managing and upgrading Kubernetes clusters. It combines the benefits of an enterpriseready operating system with the agility of an orchestration platform for containerized applications such as SAP Data Intelligence. While there are several top-tier Kubernetes offerings in the market, SUSE CaaS Platform stands out for its ease of installation and configuration, DevOps integration (via SUSE Cloud Application Platform) and enterprise-level operability and scalability.
+
+SUSE CaaS Platform consists of the following node types:
+
+*Administration Node*
+The Administration Node of the SUSE CaaS Platform performs
+the deployment, management, and software upgrades for the cluster. It leverages proven Kubernetes techologies such as kubeadm and kubectl for most tasks. The Administration Node can be dedicated to a single CaaS Platform cluster or manage multiple clusters. 
+
+*Kubernetes Master Nodes*
+The CaaS Platform Master Nodes maintain the Kubernetes control plane services. These services run as containers on the Master Nodes. While three or more Master Nodes (always an odd number) are required for high availability of the Kubernetes control plane, a single Master Node is acceptable for demonstration purposes.
+
+*Kubernetes Worker Nodes*
+The CaaS Platform Kubernetes Worker Nodes run the SAP Data Intelligence application containers. SAP Data Intelligence requires a minimum of three Kubernetes Worker Nodes (four worker nodes for production). SUSE currently supports CaaS Platform clusters of up to 150 nodes. Additional Worker Nodes can be added to a Production CaaS Platform cluster non-disruptively.
+
+== Optional SUSE Cloud Application Platform
+SUSE Cloud Application Platform is a modern application delivery environment used to bring an advanced cloud-native DevOps experience to container-based infrastructure. SUSE’s implementation is based on the open source Project Eirini, which uses Kubernetes to orchestrate application containers while maintaining the Cloud Foundry user experience. This Platform as a Service (PaaS) environment is used by developers to streamline lifecycle management of traditional and cloud-native applications. Together, these technologies accelerate innovation, improve IT responsiveness, and maximize return on investment. 
+
+== Storage Architecture 
+The storage layer of this solution leverages the Software Defined Storage capabilities of SUSE Enterprise Storage (SES). SES is a commercially supported distribution of the Ceph enterprisegrade, scale-out storage solution. SAP requires a certified solution for storage that supports Rados Block Devices as well as Dynamically Provisioned Volumes. (See SAP Note 2686169 for certified storage options.)
