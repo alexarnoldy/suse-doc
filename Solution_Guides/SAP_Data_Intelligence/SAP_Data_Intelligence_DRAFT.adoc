@@ -16,7 +16,9 @@ endif::[]
 :CompanyName: SUSE
 :ProductName: NA
 :ProductNameNoSpaces: NA
+:ProductNameK8sManager: Rancher
 :ProductNameK8s: Rancher Kubernetes Engine
+:ProductNameK8sShort: RKE
 :ProductNameSES: Enterprise Storage
 :ProductNameSESshort: SES
 
@@ -127,14 +129,13 @@ This database holds all of the required persistent data required by {ISVPartner}
 == Optional Hadoop Cluster
 Optionally, a Hadoop cluster can be built on dedicated nodes and co-located with {ISVPartner} {ISVProductName}. This Hadoop cluster can be used as a local high powered computational/storage medium for {ISVPartner} {ISVProductName} original and uploaded content. The {ISVPartner} {ISVProductName} Spark Extensions are used to interface with the Spark2 environment on the Hadoop cluster for processing and storing data. When utilizing this cluster, {ISVProductName} users can leverage the analytical strengths of {ISVPartner} Vora to analyze and store data in HDFS through the {ISVPartner} {ISVProductName} Vora Spark Extension. {CompanyName} has extensive experience deploying bare-metal and virtualized Hadoop clusters on {CompanyName} Linux Enterprise Server. While this Hadoop cluster uses dedicated nodes, its HDFS storage is built on block storage from the {CompanyName} {ProductName{ProductNameSESshort}} cluster that also serves {ISVPartner} {ISVProductName}. 
 
-== {CompanyName} {ProductNameK8s}
-{CompanyName} {ProductNameK8s} is an integrated software platform that automates the tasks of building, managing and upgrading Kubernetes clusters. It combines the benefits of an enterpriseready operating system with the agility of an orchestration platform for containerized applications such as {ISVPartner} {ISVProductName}. While there are several top-tier Kubernetes offerings in the market, {CompanyName} {ProductNameK8s} stands out for its ease of installation and configuration, DevOps integration (via {CompanyName} Cloud Application Platform) and enterprise-level operability and scalability.
+== {CompanyName} {ProductNameK8sManager}
+{CompanyName} {ProductNameK8sManager} is an integrated software platform that automates the tasks of building, managing and upgrading Kubernetes clusters. It combines the benefits of an enterprise ready operating system with the agility of an orchestration platform for containerized applications such as {ISVPartner} {ISVProductName}. While there are several top-tier Kubernetes platforms in the market, {CompanyName} {ProductNameK8sManager} stands out for its ease of installation and configuration, DevOps integration and enterprise-level operability and scalability.
 
-{CompanyName} {ProductNameK8s} consists of the following node types:
+{companyname} {productnamek8smanager} is capable of managing millions of Kubernetes clusters, of any type that is certified with the CNCF. It can easily manage on premise, public cloud, and edge Kubernetes from a single point of management. For this project we chose the enterprise-grade {CompanyName} {ProductNameK8s} for its flexibility, reliablity, and easy of deployment. The entire deployment consists of the following functions:
 
-*Administration Node*
-The Administration Node of the {CompanyName} {ProductNameK8s} performs
-the deployment, management, and software upgrades for the cluster. It leverages proven Kubernetes techologies such as kubeadm and kubectl for most tasks. The Administration Node can be dedicated to a single {ProductNameK8s} cluster or manage multiple clusters. 
+*{CompanyName} {productnamek8smanager}*
+The {productnamek8smanager} server is a containerized application that can run from any system running a Linux operating system. {productnamek8smanager}'s system requirements very low. Based on being used to manage our {companyname} {productnamek8s} cluster, we can see https://rancher.com/docs/rancher/v2.x/en/installation/requirements/#hardware-requirements[here] that two vCPUs and eight GB of memory are recommended. {CompanyName} {ProductNameK8sManager} performs the deployment, management, and software upgrades for the {productnamek8sshort} cluster. If available, it is recommended The can be dedicated to a single {ProductNameK8s} cluster or manage multiple clusters. 
 
 *Kubernetes Master Nodes*
 The {ProductNameK8s} Master Nodes maintain the Kubernetes control plane services. These services run as containers on the Master Nodes. While three or more Master Nodes (always an odd number) are required for high availability of the Kubernetes control plane, a single Master Node is acceptable for demonstration purposes.
