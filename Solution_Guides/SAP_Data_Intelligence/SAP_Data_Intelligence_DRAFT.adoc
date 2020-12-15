@@ -1,6 +1,6 @@
 :useCase: Data Management and Machine Learning
 
-:title: Digital Transformation - {ISVPartner} {ISVProductName} 3.0
+:title: Digital Transformation - {ISVPartner} {ISVProductName} 3
 
 :author: Alex Arnoldy
 :authorEmail: alex.arnoldy@suse.com
